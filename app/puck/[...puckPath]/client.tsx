@@ -15,6 +15,20 @@ export function Client({ path, data }: { path: string; data: Partial<Data> }) {
           body: JSON.stringify({ data, path }),
         });
       }}
+      // headerPath={path}
+      overrides={{
+        headerActions: ({ children }) => (
+          <>
+            <button>
+              <a href={path}>
+                View page
+              </a>
+            </button>
+
+            {children}
+          </>
+        ),
+      }}
     />
   );
 }

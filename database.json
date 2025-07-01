@@ -1,1 +1,46 @@
-{"/":{"content":[{"type":"HeadingBlock","props":{"title":"Edit this page by adding /edit to the end of the URL","id":"HeadingBlock-1694032984497"}}],"root":{"props": {"title":""}}}}
+{
+  "/": {
+    "root": { "props": { "title": "" } },
+    "content": [
+      {
+        "type": "HeadingBlock",
+        "props": {
+          "title": "Edit this page by adding /edit to the end of the URL",
+          "id": "HeadingBlock-1694032984497"
+        }
+      }
+    ],
+    "zones": {}
+  },
+  "/epl-best-goal": {
+    "root": { "props": { "title": "English Premier League: Best Goal 2025" } },
+    "content": [
+      {
+        "type": "AppHeader",
+        "props": {
+          "logoUrl": "https://voting-stg.eco.astro.com.my/public/images/partner/1739154965-db57754ad93110a9263c9a3d2be9b564.png",
+          "styles": { "backgroundColor": "#245c8f" },
+          "id": "AppHeader-f4df6c12-e8b9-4696-94d9-346404e50c24",
+          "logoStyles": { "width": "140px", "height": "25px" }
+        }
+      },
+      {
+        "type": "Banner",
+        "props": {
+          "url": "https://voting-stg.eco.astro.com.my/public/images/vote-banner/1738745026-Frame%201321314621.jpg",
+          "alt": "alt",
+          "styles": { "width": "100%" },
+          "id": "Banner-c84ceaca-75bf-4558-94f4-2659f22ef601"
+        }
+      },
+      {
+        "type": "Text",
+        "props": {
+          "title": "Text1232133",
+          "id": "Text-68af5fa7-ac30-4d60-8817-7c950628c64a"
+        }
+      }
+    ],
+    "zones": {}
+  }
+}
