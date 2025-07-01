@@ -1,10 +1,12 @@
 import { AppSidebar } from "@/components/layout/sidebar/app-sidebar";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { cn } from "@/lib/utils";
 import React from "react";
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <>
+    <SidebarProvider>
+      {/* <SidebarTrigger /> */}
       <AppSidebar />
       <div
         id="content"
@@ -20,7 +22,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
       >
         {children}
       </div>
-    </>
+    </SidebarProvider>
   );
 };
 

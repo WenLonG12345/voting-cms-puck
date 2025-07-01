@@ -34,6 +34,9 @@ export default async function Page({
 }: {
   params: Promise<{ puckPath: string[] }>;
 }) {
+  // const { puckPath = [] } = await params;
+  const p = await params;
+  console.log("@test", p)
   const { puckPath = [] } = await params;
   const path = `/${puckPath.join("/")}`;
   const data = getPage(path);

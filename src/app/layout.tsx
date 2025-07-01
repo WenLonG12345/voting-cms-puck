@@ -1,6 +1,5 @@
 import { Toaster } from "sonner";
 import "./styles.css";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 
 export default function RootLayout({
   children,
@@ -11,11 +10,8 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <main>
-          <SidebarProvider>
-            <SidebarTrigger />
-            {children}
-            <Toaster />
-          </SidebarProvider>
+          {children}
+          <Toaster />
         </main>
       </body>
     </html>
