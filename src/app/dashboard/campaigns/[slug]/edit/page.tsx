@@ -19,26 +19,19 @@ import { getPage } from "@/lib/get-page";
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ puckPath: string[] }>;
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const { puckPath = [] } = await params;
-  const path = `/${puckPath.join("/")}`;
+  const { slug } = await params;
+  const path = `/${slug}`;
 
   return {
     title: "Puck: " + path,
   };
 }
 
-export default async function Page({
-  params,
-}: {
-  params: Promise<{ puckPath: string[] }>;
-}) {
-  // const { puckPath = [] } = await params;
-  const p = await params;
-  console.log("@test", p)
-  const { puckPath = [] } = await params;
-  const path = `/${puckPath.join("/")}`;
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const path = `/${slug}`;
   const data = getPage(path);
 
   return <Client path={path} data={data || {}} />;

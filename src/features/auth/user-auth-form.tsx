@@ -19,6 +19,7 @@ import { Input } from "@/components/ui/input";
 import { PasswordInput } from "@/components/password-input";
 import Link from "next/link";
 import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 
 type UserAuthFormProps = HTMLAttributes<HTMLFormElement>;
 
@@ -45,6 +46,8 @@ const formSchema = z.object({
 export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
   const [isLoading, setIsLoading] = useState(false);
 
+  const router = useRouter();
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -57,8 +60,8 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
     setIsLoading(true);
 
     if (data.email === mockData.email && data.password === mockData.password) {
-      // Simulate successful login
-      console.log("Login successful", data);
+      toast.success("Login successful!");
+      router.replace("/dashboard");
       setIsLoading(false);
     } else {
       toast.error("Login failed: Invalid email or password");
